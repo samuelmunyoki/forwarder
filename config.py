@@ -1,0 +1,3 @@
+FORWARD_TO="@Underwater5885"
+API_ID=""
+API_HASH=""
