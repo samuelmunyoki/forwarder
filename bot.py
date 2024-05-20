@@ -24,10 +24,10 @@ async def _(e):
     await asyncio.sleep(10)
     await client.delete_messages(e.chat_id, [e.id, m.id])
 # incoming=True, outgoing=False
-@client.on(events.NewMessage(incoming=True, outgoing=False))
+@client.on(events.NewMessage(incoming=True, outgoing=False ))
 async def _(e: Message):
     try:
-        if e.document :
+        if e.document and e.from_id == -1001828534036:
             if e.file.ext == ".zip" or e.file.ext == ".rar" or e.file.ext == ".7z":
                 await client.send_message(entity=FORWARD_TO, message=e.raw_text, file=e.media)
     except Exception as ex:
